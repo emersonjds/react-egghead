@@ -8,24 +8,23 @@
   </head>
   <body>
     <div id="root"></div>
-    unpkg.com/react@16.7.0/umd/react.production.min.js
-    unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js
     <script
       type="text/javascript"
       src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"
-    />
+    ></script>
     <script
       type="text/javascript"
-      src="unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"
-    />
+      src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"
+    ></script>
 
     <script type="text/javascript">
       const rootElement = document.getElementById("root");
-      const element = document.createElement("div");
-
-      element.textContent = "Hello, world!";
-      element.className = "container";
-      rootElement.appendChild(element);
+      const element = React.createElement("div", {
+        children: "Hello World",
+        className: "container",
+      });
+      console.log(element);
+      ReactDOM.render(element, rootElement);
     </script>
   </body>
 </html>
